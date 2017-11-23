@@ -27,7 +27,7 @@ public class RequisitionServiceImpl implements RequisitionService {
     @Override
     @Transactional
     public RequisitionModel createRequisition(RequisitionModel requisitionModel) {
-        //Map Model to Entity
+     
         Mapper mapper = new DozerBeanMapper();
         Requisition requisition = mapper.map(requisitionModel, Requisition.class);
         requisitionRepo.createWithItems(requisition, requisition.getRequisitionItems());
